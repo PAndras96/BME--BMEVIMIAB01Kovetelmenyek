@@ -1,0 +1,14 @@
+% !TeX root = kovetelmeny.tex
+\newcommand{\pontMeret}{0.35}
+\newcommand{\nagyOsztas}{1}
+\newcommand{\kisOsztas}{0.35}
+\begin{tikzpicture}
+	% fő pontszám tengely és osztásai
+	\draw (0,0)--(46*\pontMeret,0)
+	(0,0)--++(0,\nagyOsztas) 
+	(\pontMeret,0)--++(0,\kisOsztas)
+	(2*\pontMeret,0)--++(0,\kisOsztas)
+	(3*\pontMeret,0)--++(0,\kisOsztas)
+	(4*\pontMeret,0)--++(0,\kisOsztas)
+	(5*\pontMeret,0)--++(0,\nagyOsztas);
+\end{tikzpicture}
