@@ -1,19 +1,84 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper,12pt]{article}
 \usepackage{t1enc}
 \usepackage[utf8]{inputenc}
 \usepackage[magyar]{babel}
 \usepackage{geometry}
 \usepackage{tikz}
 \usetikzlibrary{calc}
+\usepackage{makecell}
+\usepackage{pdflscape}
+\usepackage[hidelinks]{hyperref}
 
 \geometry{left=20mm,right=20mm,top=20mm,bottom=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
 
 \begin{document}
 	\begin{center}
 		\LARGE Méréstechnika (BMEVIMIAB01) követelményrendszer
 	\end{center}
-	\begin{figure}[h]
-		\input{abra.tex}
-	\end{figure}
+	Az alábbiakban a Méréstechnika (BMEVIMIAB01) tárgy követelményrendszerének nemhivatalos leírása, értelmezése található. \textbf{Figyelem:} jelen dokumentum csupán egy értelmezés, amennyiben a tantárgyi adatlapról (\url{https://portal.vik.bme.hu/kepzes/targyak/VIMIAB01/}), a TVSZ-ből és/vagy az oktatóktól más információ származik, azokat a forrásokat kell érvényesnek tekinteni.
 	
+	Jelenlét
+	\begin{itemize}
+		\item Előadás: nem kötelező
+		\item Gyakorlat: a gyakorlatok $70\%$-án való részvétel kötelező (ez $14$ gyakorlat esetén $10$ alkalmat jelent)
+	\end{itemize}
+	Nagy zárthelyi (NZH)
+	\begin{itemize}
+		\item Egy darab, félév végén ZH-sávban
+		\item Elérhető: $20$ pont (jellemzően $2\times5$ pont $+5\times2$ pont)
+		\item Követelmény: $8$ pont ($40\%$)
+		\item Két alkalommal pótolható, egyszer a szorgalmi időszakban, egyszer a pótlási héten
+	\end{itemize}
+	Kis zárthelyik (kZH-k)
+	\begin{itemize}
+		\item Öt darab, félév közben gyakorlatokon
+		\item Elérhető: $5\times4$ pont
+		\item Követelmény: $3\times2$ pont (vagyis legalább károm kZH-t legalább $50\%$-ra teljesíteni kell)
+		\item Ha $4$ kZH legalább $2$ pontos, az $+1$, ha mind az $5$ legalább $2$ pontos, az $+2$ pluszpontot jelent
+		\item kZH-k rendje
+		\begin{enumerate}
+			\item Előző gyakorlaton bejelentés
+			\item Adott gyakorlaton kZH megírása
+			\item Néhány napon belül az eredmény felkerül a kari Moodle rendszerbe (\url{https://edu.vik.bme.hu})
+			\item Következő gyakorlaton megtekintés, reklamáció (a következő gyakorlat alatt az első olyant kell érteni ,amin a hallgató az adott kZH írása után először jelen van)
+			\item Ha a hallgató a következő gyakorlaton nem reklamál, az azt jelenti, hogy az eredményét elfogadta
+		\end{enumerate}
+	\end{itemize}
+	Házi feladatok (HF)
+	\begin{itemize}
+		\item Szorgalmi jellegűek, nem kötelezők
+		\item Pluszpontokat lehet velük szerezni
+		\item A tárgyhonlapról tölthetők (majd) le (\url{https://www.mit.bme.hu/oktatas/targyak/vimiab01/feladatok}) (majd a feladatok megoldása is itt lesz elérhető)
+		\item A feladatok mindenkinek azonosak
+		\item Öt darab feladat van a félév során
+		\item Határidő: jellemzően péntek este
+		\item Leadás: tanszéken (IE 4.emelet) kihelyezett dobozba
+		\item A megoldást gyakorlaton egy jó megoldó ismerteti kb. 5 percben, ehhez vázlatként használhatja a megoldását (ha ilyen nincs, akkor pedig a gyakorlatvezető)
+		\item Ha valakiről kiderül, hogy másolt, akkor a házi feladatokból egyáltalán nem szerezhet pluszpontokat
+		\item A házi feladatokat az előadó javítja, a reklamáció is nála történik
+		\item Minden házi feladaton $10$ pontot lehet elérni
+		\item A házi feladatokon elért egyéni összpontszám (maximum $50$), valamint az évfolyam házi feladatokon nyújtott teljesítménye alapján legfeljebb $6$ pluszpont szerezhető
+	\end{itemize}
+	Pluszpontok
+	\begin{itemize}
+		\item $1$-$1$ pluszpont szerezhető, a kötelező három teljesített (legalább $2$ pontos) kZH-n felüli további egy vagy két teljesített (legalább $2$ pontos) kZH-ért
+		\item Maximum $6$ pluszpont szerezhető a házi feladatokból
+		\item A legalább elégséges félévközi jegyet a pluszpontok legfeljebb egy jeggyel javíthatják, ehhez $6$ pluszpont szükséges
+	\end{itemize}
+	Félévközi jegy
+	\begin{itemize}
+		\item A tárgy félévközi jeggyel zárul
+		\item <Féléves pont> $=$ <NZH pont> $+\frac{5}{3}\times$ <három legjobb kZH pontjainak összege>
+		\item Így a féléves pont maximum $40$ lehet, erre $40$-$55$-$70$-$85$ százalékos, vagyis $16$-$22$-$28$-$34$ pontos alsó határokat alkalmazva kapható meg a félévközi jegy
+		\item Ha a féléves pont legalább $16$, akkor a félévközi jegy számításakor a legfeljebb $6$ plusz ponttal növelt értékét kell figyelembe venni
+		\item A NZH és kZH minimumkövetelmények teljesítése elegendő ahhoz, hogy a féléves pont alapján meglegyen az elégséges osztályzat
+	\end{itemize}
+	\begin{landscape}
+		\begin{figure}[h]
+			\input{abra.tex}
+			\caption{A pontrendszer ábrán}
+		\end{figure}
+	\end{landscape}
 \end{document}
