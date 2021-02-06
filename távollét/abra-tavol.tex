@@ -1,0 +1,255 @@
+% !TeX root = kovetelmeny.tex
+\newcommand{\pontMeret}{0.4}
+\newcommand{\nagyOsztas}{0.8}
+\newcommand{\kisOsztas}{0.4}
+\newcommand{\jegyMagassag}{0.8}
+\newcommand{\kisTengelyEltolas}{1.2}
+\newcommand{\nagyTengelyEltolas}{2}
+
+\newcommand{\pontMarker}[5] %x0,y0,h,color,pont
+{\draw[#4] (#1,#2)--++(0,#3) node[anchor=south]{#5} ++(0,-0.3)--++(0.4,0)--++(-0.1,-0.1)++(0.1,0.1)--++(-0.1,0.1);}
+\newcommand{\jegyMarker}[6] %x0,y0,h,color,pont,jegy
+{\draw[#4] (#1,#2)--++(0,#3) node[anchor=south]{#5} ++(0,-0.3)--++(0.7,0)--++(-0.1,-0.1)++(0.1,0.1)--++(-0.1,0.1) node[anchor=south,draw,yshift=0.5mm]{#6};}
+\newcommand{\jegyMarkerAlt}[6] %x0,y0,h,color,pont,jegy
+{\draw[#4] (#1,#2)--++(0,#3) node[anchor=south,draw,yshift=0.5mm]{#6} ++(0,-0.3) node[anchor=east]{#5} --++(0.4,0)--++(-0.1,-0.1)++(0.1,0.1)--++(-0.1,0.1);}
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\begin{tikzpicture}
+	% fő pontszám tengely és osztásai
+	\draw (0,0) node[anchor=east]{\makecell[r]{{\color{red}Minimumkövetelmény}\\Szerezhető pont\\{\color{darkgreen}NZH, kHZ minimális járuléka}}} --(40*\pontMeret,0)
+	(0,0)--++(0,\nagyOsztas) node[anchor=west]{$0$}
+	(\pontMeret,0)--++(0,\kisOsztas)
+	(2*\pontMeret,0)--++(0,\kisOsztas)
+	(3*\pontMeret,0)--++(0,\kisOsztas)
+	(4*\pontMeret,0)--++(0,\kisOsztas)
+	(5*\pontMeret,0)--++(0,\nagyOsztas) node[anchor=west]{$5$}
+	(6*\pontMeret,0)--++(0,\kisOsztas)
+	(7*\pontMeret,0)--++(0,\kisOsztas)
+	(8*\pontMeret,0)--++(0,\kisOsztas)
+	(9*\pontMeret,0)--++(0,\kisOsztas)
+	(10*\pontMeret,0)--++(0,\nagyOsztas) node[anchor=west]{$10$}
+	(11*\pontMeret,0)--++(0,\kisOsztas)
+	(12*\pontMeret,0)--++(0,\kisOsztas)
+	(13*\pontMeret,0)--++(0,\kisOsztas)
+	(14*\pontMeret,0)--++(0,\kisOsztas)
+	(15*\pontMeret,0)--++(0,\nagyOsztas) node[anchor=south]{$15$}
+	(16*\pontMeret,0)--++(0,\kisOsztas)
+	(17*\pontMeret,0)--++(0,\kisOsztas)
+	(18*\pontMeret,0)--++(0,\kisOsztas)
+	(19*\pontMeret,0)--++(0,\kisOsztas)
+	(20*\pontMeret,0)--++(0,\nagyOsztas) node[anchor=west]{$20$}
+	(21*\pontMeret,0)--++(0,\kisOsztas)
+	(22*\pontMeret,0)--++(0,\kisOsztas)
+	(23*\pontMeret,0)--++(0,\kisOsztas)
+	(24*\pontMeret,0)--++(0,\kisOsztas)
+	(25*\pontMeret,0)--++(0,\nagyOsztas) node[anchor=west]{$25$}
+	(26*\pontMeret,0)--++(0,\kisOsztas)
+	(27*\pontMeret,0)--++(0,\kisOsztas)
+	(28*\pontMeret,0)--++(0,\kisOsztas)
+	(29*\pontMeret,0)--++(0,\kisOsztas)
+	(30*\pontMeret,0)--++(0,\nagyOsztas) node[anchor=west]{$30$}
+	(31*\pontMeret,0)--++(0,\kisOsztas)
+	(32*\pontMeret,0)--++(0,\kisOsztas)
+	(33*\pontMeret,0)--++(0,\kisOsztas)
+	(34*\pontMeret,0)--++(0,\kisOsztas)
+	(35*\pontMeret,0)--++(0,\nagyOsztas) node[anchor=west]{$35$}
+	(36*\pontMeret,0)--++(0,\kisOsztas)
+	(37*\pontMeret,0)--++(0,\kisOsztas)
+	(38*\pontMeret,0)--++(0,\kisOsztas)
+	(39*\pontMeret,0)--++(0,\kisOsztas)
+	(40*\pontMeret,0)--++(0,\nagyOsztas) node[anchor=west]{$40$};
+	\draw[blue] (40*\pontMeret,0)--(46*\pontMeret,0)
+	(41*\pontMeret,0)--++(0,\kisOsztas)
+	(42*\pontMeret,0)--++(0,\kisOsztas)
+	(43*\pontMeret,0)--++(0,\kisOsztas)
+	(44*\pontMeret,0)--++(0,\kisOsztas)
+	(45*\pontMeret,0)--++(0,\nagyOsztas) node[anchor=west]{$45$}
+	(46*\pontMeret,0)--++(0,\kisOsztas);
+	% féléves jegy ponthatárok
+	\jegyMarker{0}{\nagyOsztas}{\jegyMagassag}{red}{$0$}{$1$}
+	\jegyMarker{16*\pontMeret}{\kisOsztas}{\nagyOsztas-\kisOsztas+\jegyMagassag}{red}{$16$}{$2$}
+	\jegyMarker{22*\pontMeret}{\kisOsztas}{\nagyOsztas-\kisOsztas+\jegyMagassag}{red}{$22$}{$3$}
+	\jegyMarker{28*\pontMeret}{\kisOsztas}{\nagyOsztas-\kisOsztas+\jegyMagassag}{red}{$28$}{$4$}
+	\jegyMarker{34*\pontMeret}{\kisOsztas}{\nagyOsztas-\kisOsztas+\jegyMagassag}{red}{$34$}{$5$}
+	\draw[red] (0,0.5*\kisOsztas)--++(16*\pontMeret,0);
+	\node at(0,\nagyOsztas+\jegyMagassag+0.3) [anchor=east,red] {Ponthatárok (alsó)};
+	\node at(0,\nagyOsztas+\jegyMagassag-0.3) [anchor=east,red,draw,xshift=-1.5mm] {Féléves jegy};
+	% NHZ tengely
+	\draw (0,-\kisTengelyEltolas-\nagyTengelyEltolas) node[anchor=east]{\makecell[r]{{\color{red}Minimumkövetelmény}\\NZH pont}} --++(20*\pontMeret,0)
+	(0,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$0$}
+	(\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(2*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(3*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(4*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(5*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$5$}
+	(6*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(7*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(8*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(9*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(10*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$10$}
+	(11*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(12*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(13*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(14*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(15*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$15$}
+	(16*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(17*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(18*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(19*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(20*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$20$};
+	\draw [dashed] (0,-\kisTengelyEltolas-\nagyTengelyEltolas+\nagyOsztas)--(0,0)
+	(20*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas+\nagyOsztas)--(20*\pontMeret,0);
+	% NZH követelmény
+	\pontMarker{8*\pontMeret}{-\kisTengelyEltolas-\nagyTengelyEltolas+\kisOsztas}{\nagyOsztas-\kisOsztas+\jegyMagassag}{red}{$8$}
+	\draw[red] (0,-\kisTengelyEltolas-\nagyTengelyEltolas+0.5*\kisOsztas)--++(8*\pontMeret,0);
+	% kHZ tengely
+	\draw (20*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas) node[anchor=south east]{\makecell[r]{{\color{blue}Pluszpont követelmény}\\{\color{red}Minimumkövetelmény}\\kZH-k csökkenő elért pontszámmal}} node[anchor=north east,blue,draw,xshift=-1.5mm]{Szerzett pluszpont} --++(20*\pontMeret,0)
+	(20*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$0$}
+	(21*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(22*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(23*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(24*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$4$} node[anchor=west]{$0$}
+	(25*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas) 
+	(26*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(27*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(28*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$4$} node[anchor=west]{$0$}
+	(29*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(30*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(31*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(32*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$4$} node[anchor=west]{$0$}
+	(33*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(34*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(35*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(36*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$4$} node[anchor=west]{$0$}
+	(37*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(38*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(39*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(40*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$4$};
+	\draw[dashed] (20*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas+\nagyOsztas)--(20*\pontMeret,-\kisTengelyEltolas-\nagyTengelyEltolas)
+	(32*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas+\nagyOsztas)--++(0,\nagyTengelyEltolas)--(40*\pontMeret,-0.5)--++(0,0.5);
+	\node at(26*\pontMeret,-\nagyTengelyEltolas){\LARGE$\times\frac{5}{3}$};
+	% kZH követelmény
+	\pontMarker{22*\pontMeret}{-\kisTengelyEltolas-2*\nagyTengelyEltolas+\kisOsztas}{\nagyOsztas-\kisOsztas+\jegyMagassag}{red}{$2$}
+	\pontMarker{26*\pontMeret}{-\kisTengelyEltolas-2*\nagyTengelyEltolas+\kisOsztas}{\nagyOsztas-\kisOsztas+\jegyMagassag}{red}{$2$}
+	\pontMarker{30*\pontMeret}{-\kisTengelyEltolas-2*\nagyTengelyEltolas+\kisOsztas}{\nagyOsztas-\kisOsztas+\jegyMagassag}{red}{$2$}
+	\draw[red] (20*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas+0.5*\kisOsztas)--++(2*\pontMeret,0)
+	(24*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas+0.5*\kisOsztas)--++(2*\pontMeret,0)
+	(28*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas+0.5*\kisOsztas)--++(2*\pontMeret,0);
+	\jegyMarkerAlt{34*\pontMeret}{-\kisTengelyEltolas-2*\nagyTengelyEltolas+\kisOsztas}{\nagyOsztas-\kisOsztas+\jegyMagassag}{blue}{$2$}{$+1$}
+	\jegyMarkerAlt{38*\pontMeret}{-\kisTengelyEltolas-2*\nagyTengelyEltolas+\kisOsztas}{\nagyOsztas-\kisOsztas+\jegyMagassag}{blue}{$2$}{$+1$}
+	% 16 minimumpont teljesítése
+	\draw[darkgreen] (0,-0.5*\kisOsztas)--++(18*\pontMeret,0)
+	(0,0)--++(0,-\kisOsztas)
+	(8*\pontMeret,0)--++(0,-\kisOsztas)
+	(18*\pontMeret,0)--++(0,-\kisOsztas);
+	\node at(4*\pontMeret,-0.5*\kisOsztas)[anchor=north,darkgreen]{NZH};
+	\node at(13*\pontMeret,-0.5*\kisOsztas)[anchor=north,darkgreen]{kZH$\times\frac{5}{3}$};
+	% pluszpont tengely
+	\draw[blue] (40*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas) node[anchor=south east]{Pluszpontok} --++(8*\pontMeret,0)
+	(40*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$0$}
+	(41*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(42*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(43*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(44*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas) 
+	(45*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas) 
+	(46*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$6$}
+	(47*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas) 
+	(48*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$8$};
+	\draw[blue,dashed] (40*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas+\nagyOsztas)--(40*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas)
+	(40*\pontMeret,-\kisTengelyEltolas-2*\nagyTengelyEltolas+\nagyOsztas)--(40*\pontMeret,-0.5)
+	(46*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas+\nagyOsztas)--(46*\pontMeret,0);
+	% kZH pluszpont tengely
+	\draw[blue] (40*\pontMeret,-3*\kisTengelyEltolas-2*\nagyTengelyEltolas) node[anchor=south east]{kZH-ból} --++(2*\pontMeret,0)
+	(40*\pontMeret,-3*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$0$}
+	(41*\pontMeret,-3*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(42*\pontMeret,-3*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$2$};
+	\draw[blue,dashed] (40*\pontMeret,-3*\kisTengelyEltolas-2*\nagyTengelyEltolas+\nagyOsztas)--(40*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas)
+	(42*\pontMeret,-3*\kisTengelyEltolas-2*\nagyTengelyEltolas+\nagyOsztas)--(42*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas);
+	% HF pluszpont tengely
+	\draw[blue] (42*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas) node[anchor=south east]{HF-ből} --++(6*\pontMeret,0)
+	(42*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$0$}
+	(43*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(44*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(45*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(46*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(47*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(48*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$6$};
+	\draw[blue,dashed] (42*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas+\nagyOsztas)--(42*\pontMeret,-3*\kisTengelyEltolas-2*\nagyTengelyEltolas)
+	(48*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas+\nagyOsztas)--(48*\pontMeret,-2*\kisTengelyEltolas-2*\nagyTengelyEltolas);
+	% HF tengely
+	\draw[gray] (-2*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas) node[anchor=south east]{HF-eken elért pontok} --++(50*\pontMeret,0)
+	(-2*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$0$}
+	(-\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(0,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(2*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(3*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(4*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(5*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(6*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(7*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(8*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$10$} node[anchor=west]{$0$}
+	(9*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(10*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(11*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(12*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(13*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(14*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(15*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(16*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(17*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(18*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$10$} node[anchor=west]{$0$}
+	(19*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(20*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(21*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(22*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(23*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(24*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(25*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(26*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(27*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(28*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$10$} node[anchor=west]{$0$}
+	(29*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(30*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(31*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(32*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(33*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(34*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(35*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(36*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(37*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(38*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$10$} node[anchor=west]{$0$}
+	(39*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(40*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(41*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(42*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(43*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(44*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(45*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(46*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(47*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\kisOsztas)
+	(48*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$10$};
+	\draw[blue,dashed] (-2*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas+\nagyOsztas)--++(0,0.5)
+	--(48*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas-0.5)--++(0,0.5)
+	(48*\pontMeret,-4*\kisTengelyEltolas-3*\nagyTengelyEltolas+\nagyOsztas)--++(0,0.4)--(42*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas-0.4)--++(0,0.4);
+%	% Gyakrolati jelenlét tengely
+%	\draw[brown] (-2*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas) node[anchor=east]{\makecell[r]{{\color{red}Minimumkövetelmény}\\Jelenlét gyakorlaton}} --++(14*\pontMeret,0)
+%	(-2*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$0$}
+%	(-\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+%	(0,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+%	(\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+%	(2*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+%	(3*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=west]{$5$}
+%	(4*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+%	(5*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+%	(6*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+%	(7*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+%	(8*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas)
+%	(9*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+%	(10*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+%	(11*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\kisOsztas)
+%	(12*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas)--++(0,\nagyOsztas) node[anchor=east]{$14$};
+%	% Gyakorlati jelenlét követelmény
+%	\pontMarker{8*\pontMeret}{-4*\kisTengelyEltolas-2*\nagyTengelyEltolas+\nagyOsztas}{\nagyOsztas-\kisOsztas+\jegyMagassag}{red}{$10$}
+%	\draw[red] (-2*\pontMeret,-4*\kisTengelyEltolas-2*\nagyTengelyEltolas+0.5*\kisOsztas)--++(10*\pontMeret,0);
+\end{tikzpicture}
